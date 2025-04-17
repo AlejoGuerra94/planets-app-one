@@ -1,0 +1,14 @@
+.container {
+    margin: 2.286rem auto;
+
+    @media screen and (min-width: 768px) {
+        margin: 3.5rem auto;
+    }
+}
+
+.img {
+    border-radius: 0.748rem;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+}

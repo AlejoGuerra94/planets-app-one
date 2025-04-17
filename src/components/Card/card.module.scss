@@ -1,0 +1,14 @@
+.container {
+    background: rgba(0, 0, 0, 0.35);
+    box-shadow: rgba(255, 255, 255, 0.192) 0px 5px 15px;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    flex-direction: column;
+    margin: 0 2rem;
+
+    @media screen and (min-width: 768px) {
+        margin: 0;
+    }
+}
