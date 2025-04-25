@@ -7,5 +7,4 @@ interface IPlanet {
     gravity: number;
     inclination: number;
     density: number;
-    discoveredBy: number;
   }     

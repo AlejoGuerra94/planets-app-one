@@ -1,20 +1,22 @@
+import { ReactNode } from "react";
 import Image from "../Image";
 
 import styles from "./card.module.scss";
 
 interface ICard {
   title: string;
-  description?: string;
+  description?: ReactNode;
   image?: string;
+  className?: string;
 }
 
-const Card = ({ title, description, image }: ICard) => {
+const Card = ({ title, description, image, className }: ICard) => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${className}`}>
      {image && <Image src={image} />}
       <div className={styles.container__content}>
         <h3>{title}</h3>
-        <p>{description}</p>
+        <div>{description}</div>
       </div>
     </div>
   );

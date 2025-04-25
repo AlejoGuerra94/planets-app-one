@@ -1,26 +1,25 @@
-import Card from "../../components/Card";
 import { useEffect, useState } from "react";
 import { planetImages } from "./constants";
-import { Input } from "../../components/Input";
-import { PlanetService } from "../../services/planets";
-import Loader from "../../components/Loader";
+import { PlanetsService } from "../../services/planets";
+import { useNavigate } from "react-router-dom";
+import { Card, Input, Loader, Select } from "../../components";
 
 import styles from "./planets.module.scss";
-import { Select } from "../../components/Select";
 
 const Planets = () => {
   const [planet, setPlanet] = useState<IPlanet[]>([]);
   const [loading, setloading] = useState<boolean>(true);
   const [search, setSearch] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const planets = async () => {
       try {
-        const data = await PlanetService.getAllPlanets();
+        const data = await PlanetsService.getAllPlanets();
         setPlanet(data);
       } catch (error) {
-        console.error("Error al encontrar lo splanetas:", error);
+        console.error("Error al encontrar los planetas:", error);
         throw error;
       } finally {
         setloading(false);
@@ -57,6 +56,7 @@ const Planets = () => {
            <div
            key={planet.id}
            className={styles.card}
+           onClick={() => navigate(`/detailPlanet/${planet.id}`)}
          >
             <Card title={planet.englishName} image={planetImages[planet.id]} />
           </div>

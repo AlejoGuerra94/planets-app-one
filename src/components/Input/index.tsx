@@ -8,7 +8,7 @@ interface IInput {
   className?: string;
 }
 
-export const Input = ({
+ const Input = ({
   type,
   placeholder = "Buscar planeta...",
   value,
@@ -27,3 +27,5 @@ export const Input = ({
     </div>
   );
 };
+
+export default Input;

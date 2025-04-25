@@ -5,7 +5,7 @@ value:  "asc" | "desc";
 onChange?: (value: "asc" | "desc") => void;
 } 
 
-export const Select = ({value,onChange}:ISelect) => {
+ const Select = ({value,onChange}:ISelect) => {
   return (
     <div className={styles.selectContent}>
     <select 
@@ -19,3 +19,5 @@ export const Select = ({value,onChange}:ISelect) => {
     </div>
   )
 }
+
+export default Select;
